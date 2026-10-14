@@ -1,12 +1,12 @@
-/*  your css code here. If applicable */
 
 #outer {
   width: 300px;
   height: 300px;
   background-color: #ff0000;
   border-radius: 50%;
-  padding: 25px;
-  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #middle {
@@ -14,8 +14,9 @@
   height: 250px;
   background-color: #ffa500;
   border-radius: 50%;
-  padding: 25px;
-  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #inner {
@@ -23,16 +24,30 @@
   height: 200px;
   background-color: #ffff00;
   border-radius: 50%;
-  padding: 25px;
-  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-/* Create the remaining circles using nested backgrounds */
-#inner {
-  background-color: #ffff00;
-  border: 25px solid #008000;
-  outline: none;
-  box-shadow:
-    inset 0 0 0 25px #0000ff,
-    inset 0 0 0 50px #800080;
+#inner::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: #008000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inner::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #0000ff;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 25px #800080;
 }
